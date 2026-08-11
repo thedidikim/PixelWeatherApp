@@ -156,6 +156,15 @@ button:hover {
     font-weight: 700;
 }
 
+/* Footer attribution */
+.site-footer {
+    max-width: 900px;
+    margin: 2rem auto 0;
+    color: var(--bit-shadow);
+    font-size: 0.6rem;
+    text-align: center;
+}
+
 /* Mobile breakpoints */
 @media (max-width: 700px) {
     .forecast-panel {
