@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+
+    <!-- Pixel-style interface font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+
+    <!-- App stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <main class="weather-app">
+        <header class="site-header">
+            <h1>National Weather Service:<br>Local Forecast</h1>
+        </header>
+        <section class="search-panel">
+            <h2>Location Input</h2>
+            <form id="weather-form">
+                <div class="input-group">
+                    <label for="latitude">Latitude</label>
+                    <input type="number" id="latitude" name="latitude" min="-90" max="90" step="any" value="34.0522"
+                        required>
+                </div>
+                <div class="input-group">
+                    <label for="longitude">Longitude</label>
+                    <input type="number" id="longitude" name="longitude" min="-180" max="180" step="any"
+                        value="-118.2436" required>
+                </div>
+                <div class="button-group">
+                    <button type="button" id="location-button">Use My Location</button>
+                    <button type="submit">Run Forecast</button>
+                </div>
+            </form>
+        </section>
+        <section id="status" class="status-panel">
+            Ready to retrieve forecast.
+        </section>
+        <section id="forecast" class="forecast-panel">
+            <!-- Forecast info will be inserted here by weather.js -->
+        </section>
+    </main>
+
+    <!-- jQuery library; must load before weather.js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- App JavaScript -->
+    <script src="js/weather.js"></script>
+</body>
+
+</html>

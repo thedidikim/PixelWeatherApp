@@ -1,0 +1,164 @@
+/* 8-bit color palette */
+:root {
+    --bit-bg: #2D2867;
+    --bit-shadow: #8C426D;
+    --bit-mid: #8D9F7F;
+    --bit-highlight: #66CFBD;
+}
+
+/* Basic page config */
+* {
+    box-sizing: border-box;
+    ;
+}
+
+body {
+    margin: 0;
+    padding: 2rem;
+    background-color: var(--bit-bg);
+    color: var(--bit-highlight);
+    font-family: "Silkscreen", sans-serif;
+}
+
+/* Main app container */
+.weather-app {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* App header */
+.site-header {
+    border: 2px solid var(--bit-mid);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.site-header h1 {
+    margin: 0 0 0.5rem;
+    font-size: 2rem;
+}
+
+.site-header p {
+    margin: 0;
+}
+
+/* Coordinate input section */
+.search-panel {
+    border: 2px solid var(--bit-mid);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.search-panel h2 {
+    margin-top: 0;
+}
+
+/* Input layout */
+#weather-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.input-group {
+    display: grid;
+    gap: 0.4rem;
+}
+
+.input-group label {
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--bit-mid);
+    border-radius: 0;
+    background-color: var(--bit-bg);
+    color: var(--bit-mid);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+/* Remove number input spinner from Chrome, Edge, and Safari */
+.input-group input::-webkit-inner-spin-button,
+.input-group input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Remove number input spinner from Firefox */
+.input-group input[type="number"] {
+    appearance: textfield;
+}
+
+/* Use My Location and Submit buttons */
+.button-group {
+    display: grid;
+    gap: 0.5rem;
+}
+
+button {
+    padding: 0.75rem;
+    border: 2px solid var(--bit-shadow);
+    border-radius: 0;
+    background-color: var(--bit-shadow);
+    color: var(--bit-bg);
+    text-align: left;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover {
+    border: 2px solid var(--bit-highlight);
+    color: var(--bit-highlight);
+}
+
+/* Status messages (successful request includes location name) */
+.status-panel {
+    border: 2px solid var(--bit-shadow);
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Forecast displayed horizontally */
+.forecast-panel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+/* Card display for each individual forecast */
+.forecast-card {
+    border: 2px solid var(--bit-mid);
+    padding: 1.5rem;
+}
+
+.forecast-card h3 {
+    margin-top: 0;
+}
+
+.forecast-card p {
+    margin: 0.5rem 0;
+}
+
+.forecast-card img {
+    width: 50px;
+    height: 50px;
+    image-rendering: pixelated;
+}
+
+.temperature {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Mobile breakpoints */
+@media (max-width: 700px) {
+    .forecast-panel {
+        grid-template-columns: 1fr;
+    }
+}
